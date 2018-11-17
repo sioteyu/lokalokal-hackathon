@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CoffeePartner;
-use App\TransactionHistory;
+use App\TransactionItem;
 use Illuminate\Support\Facades\Input;
 
 class CoffeePartnerController extends ApiController
@@ -31,7 +31,7 @@ class CoffeePartnerController extends ApiController
 
     public function showTransactions($id)
     {
-        return TransactionHistory::where('product_id', $id)->get();
+        return TransactionItem::where('product_id', $id)->get();
     }
 
     public function update($id)
