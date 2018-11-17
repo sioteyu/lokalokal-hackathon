@@ -52,8 +52,8 @@ class TransactionHistoryController extends ApiController
             "credits" => Input::get('credits')
         );
 
-        TransactionHistory::create($TransactionHistory);
+        $transaction = TransactionHistory::create($TransactionHistory);
 
-        return $this->respondCreated('Successfully created an TransactionHistory!');
+        return $this->respondCreated('Successfully created an Transaction with ID = ' . $transaction->id);
     }
 }
