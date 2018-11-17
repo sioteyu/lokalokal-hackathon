@@ -5,7 +5,10 @@
     <title></title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link href="https://canvasjs.com/assets/css/jquery-ui.1.11.2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="index.css">
+
+
   </head>
   <body>
     <div class="container-fluid display-table">
@@ -20,7 +23,7 @@
                     <ul>
                         <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
                         <li><a href="./statistics.html"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li>
-                        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Logout</span></a></li>
+                        <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Logout</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -82,7 +85,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12 gutter">
 
                             <div class="sales report">
-                                <h2>Sales</h2>
+                                <h2>Statistics</h2>
                                 <div class="btn-group">
                                     <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span>This Year</span>
@@ -96,39 +99,9 @@
                                 </div>
                             </div>
 
-                            <div class="">
-                              <table class="table table-bordered">
-                                <tr>
-                                  <th>Coffee Name</th>
-                                  <th>Price</th>
-                                  <th>Grams Used</th>
-                                  <th>Purchase Location</th>
-                                </tr>
-
-                                <tr>
-                                  <td colspan="4"><span>Purchased by: </span>John Magbanua</td>
-                                  <tr>
-                                    <td>Kopiko 3 in 1</td>
-                                    <td>&#8369;20</td>
-                                    <td>100g</td>
-                                    <td>Loft Ortigas</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Kopiko 3 in 1</td>
-                                    <td>&#8369;20</td>
-                                    <td>100g</td>
-                                    <td>Loft Ortigas</td>
-                                  </tr>
-                                  <tr>
-                                    <td>Kopiko 3 in 1</td>
-                                    <td>&#8369;20</td>
-                                    <td>100g</td>
-                                    <td>Loft Ortigas</td>
-                                  </tr>
-                                  <td colspan="4"><span>Total: </span>&#8369; 60</td>
-                                </tr>
-                              </table>
-                            </div>
+                            <div id="resizable" style="height: 370px;border:1px solid gray;">
+	                             <div id="chartContainer1" style="height: 100%; width: 100%;"></div>
+                             </div>
 
                         </div>
                     </div>
@@ -164,10 +137,12 @@
 
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-ui.1.11.2.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="index.js"></script>
-    <script src="query.js"></script>
+    <script src="statistics.js"></script>
   </body>
 </html>
