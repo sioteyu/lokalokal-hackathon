@@ -15,7 +15,7 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->group(['middleware' => 'cors'], function () use ($app) {
+$router->group(['middleware' => 'cors'], function () use ($router) {
 
 	$router->POST('login', ['uses' => 'AuthController@Authenticate']);
 
