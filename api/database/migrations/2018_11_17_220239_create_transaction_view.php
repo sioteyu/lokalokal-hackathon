@@ -14,7 +14,7 @@ class CreateTransactionView extends Migration
     public function up()
     {
         DB::statement("CREATE VIEW transaction AS
-                       SELECT concat(users.first_name, users.last_name) AS customer_name,
+                       SELECT concat(users.first_name, ' ', users.last_name) AS customer_name,
                               th.id AS transaction_id,
                               ti.id AS transaction_item_id,
                               products.product_name AS product_name,

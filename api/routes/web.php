@@ -88,6 +88,14 @@ $router->group(['middleware' => 'cors'], function () use ($router) {
 
 	$router->DELETE('items/{id}', ['uses' => 'TransactionItemController@destroy']);
 
+	$router->GET('trans', ['uses' => 'TransactionController@index']);
+
+	$router->POST('trans', ['uses' => 'TransactionController@store']);
+
+	$router->GET('trans/{id}', ['uses' => 'TransactionController@show']);
+
+	$router->DELETE('trans/{id}', ['uses' => 'TransactionController@destroy']);
+
 });
 
 
