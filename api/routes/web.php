@@ -15,75 +15,79 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->POST('login', ['uses' => 'AuthController@Authenticate']);
+	$app->group(['middleware' => 'auth'], function () use ($app) {
 
-$router->GET('users', ['uses' => 'UserController@index']);
+	$router->POST('login', ['uses' => 'AuthController@Authenticate']);
 
-$router->POST('users', ['uses' => 'UserController@store']);
+	$router->GET('users', ['uses' => 'UserController@index']);
 
-$router->GET('users/{id}', ['uses' => 'UserController@show']);
+	$router->POST('users', ['uses' => 'UserController@store']);
 
-$router->PUT('users/{id}', ['uses' => 'UserController@update']);
+	$router->GET('users/{id}', ['uses' => 'UserController@show']);
 
-$router->PATCH('users/{id}', ['uses' => 'UserController@update']);
+	$router->PUT('users/{id}', ['uses' => 'UserController@update']);
 
-$router->DELETE('users/{id}', ['uses' => 'UserController@destroy']);
+	$router->PATCH('users/{id}', ['uses' => 'UserController@update']);
 
-
-$router->GET('address', ['uses' => 'AddressController@index']);
-
-$router->POST('address', ['uses' => 'AddressController@store']);
-
-$router->GET('address/{id}', ['uses' => 'AddressController@show']);
-
-$router->PUT('address/{id}', ['uses' => 'AddressController@update']);
-
-$router->PATCH('address/{id}', ['uses' => 'AddressController@update']);
-
-$router->DELETE('address/{id}', ['uses' => 'AddressController@destroy']);
+	$router->DELETE('users/{id}', ['uses' => 'UserController@destroy']);
 
 
-$router->GET('products', ['uses' => 'ProductController@index']);
+	$router->GET('address', ['uses' => 'AddressController@index']);
 
-$router->POST('products', ['uses' => 'ProductController@store']);
+	$router->POST('address', ['uses' => 'AddressController@store']);
 
-$router->GET('products/{id}', ['uses' => 'ProductController@show']);
+	$router->GET('address/{id}', ['uses' => 'AddressController@show']);
 
-$router->PUT('products/{id}', ['uses' => 'ProductController@update']);
+	$router->PUT('address/{id}', ['uses' => 'AddressController@update']);
 
-$router->PATCH('products/{id}', ['uses' => 'ProductController@update']);
+	$router->PATCH('address/{id}', ['uses' => 'AddressController@update']);
 
-$router->DELETE('products/{id}', ['uses' => 'ProductController@destroy']);
-
-
-$router->GET('bean', ['uses' => 'BeanController@index']);
-
-$router->POST('bean', ['uses' => 'BeanController@store']);
-
-$router->GET('bean/{id}', ['uses' => 'BeanController@show']);
-
-$router->PUT('bean/{id}', ['uses' => 'BeanController@update']);
-
-$router->PATCH('bean/{id}', ['uses' => 'BeanController@update']);
-
-$router->DELETE('bean/{id}', ['uses' => 'BeanController@destroy']);
+	$router->DELETE('address/{id}', ['uses' => 'AddressController@destroy']);
 
 
-$router->GET('transaction', ['uses' => 'TransactionHistoryController@index']);
+	$router->GET('products', ['uses' => 'ProductController@index']);
 
-$router->POST('transaction', ['uses' => 'TransactionHistoryController@store']);
+	$router->POST('products', ['uses' => 'ProductController@store']);
 
-$router->GET('transaction/{id}', ['uses' => 'TransactionHistoryController@show']);
+	$router->GET('products/{id}', ['uses' => 'ProductController@show']);
 
-$router->DELETE('transaction/{id}', ['uses' => 'TransactionHistoryController@destroy']);
+	$router->PUT('products/{id}', ['uses' => 'ProductController@update']);
+
+	$router->PATCH('products/{id}', ['uses' => 'ProductController@update']);
+
+	$router->DELETE('products/{id}', ['uses' => 'ProductController@destroy']);
 
 
-$router->GET('items', ['uses' => 'TransactionItemController@index']);
+	$router->GET('bean', ['uses' => 'BeanController@index']);
 
-$router->POST('items', ['uses' => 'TransactionItemController@store']);
+	$router->POST('bean', ['uses' => 'BeanController@store']);
 
-$router->GET('items/{id}', ['uses' => 'TransactionItemController@show']);
+	$router->GET('bean/{id}', ['uses' => 'BeanController@show']);
 
-$router->DELETE('items/{id}', ['uses' => 'TransactionItemController@destroy']);
+	$router->PUT('bean/{id}', ['uses' => 'BeanController@update']);
+
+	$router->PATCH('bean/{id}', ['uses' => 'BeanController@update']);
+
+	$router->DELETE('bean/{id}', ['uses' => 'BeanController@destroy']);
+
+
+	$router->GET('transaction', ['uses' => 'TransactionHistoryController@index']);
+
+	$router->POST('transaction', ['uses' => 'TransactionHistoryController@store']);
+
+	$router->GET('transaction/{id}', ['uses' => 'TransactionHistoryController@show']);
+
+	$router->DELETE('transaction/{id}', ['uses' => 'TransactionHistoryController@destroy']);
+
+
+	$router->GET('items', ['uses' => 'TransactionItemController@index']);
+
+	$router->POST('items', ['uses' => 'TransactionItemController@store']);
+
+	$router->GET('items/{id}', ['uses' => 'TransactionItemController@show']);
+
+	$router->DELETE('items/{id}', ['uses' => 'TransactionItemController@destroy']);
+
+});
 
 
