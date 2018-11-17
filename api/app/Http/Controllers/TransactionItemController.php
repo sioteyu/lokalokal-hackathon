@@ -44,7 +44,7 @@ class TransactionItemController extends ApiController
     {   
         $TransactionItem  = Input::all();
 
-        TransactionItem::create($TransactionItem);
+        TransactionItem::insert($TransactionItem);
 
         return $this->respondCreated('Successfully created an TransactionItem!');
     }
