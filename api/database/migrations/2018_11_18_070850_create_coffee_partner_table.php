@@ -17,8 +17,8 @@ class CreateCoffeePartnerTable extends Migration
             $table->increments('id');
             $table->string('name', 100);
             $table->integer('product_id');
-            $table->decimal('total_credits');
-            $table->decimal('farmer_credits');
+            $table->decimal('total_credits')->default(0);
+            $table->decimal('farmer_credits')->default(0);
 
             $table->foreign('product_id')
               ->references('id')

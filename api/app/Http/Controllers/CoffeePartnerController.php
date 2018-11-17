@@ -58,7 +58,10 @@ class CoffeePartnerController extends ApiController
 
     public function createCoffeePartner()
     {   
-        $CoffeePartner  = Input::all();
+        $CoffeePartner  =  array(
+            "name" => Input::get('name'), 
+            "product_id" => Input::get('product_id')
+        );
 
         CoffeePartner::create($CoffeePartner);
 
