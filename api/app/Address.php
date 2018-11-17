@@ -14,8 +14,8 @@ class Address extends Model
     		'address_line_1', 
     		'address_line_2', 
     		'city',
-            'state_province_region',
-            'postal_code',
-            'country_code' 
+            'province',
+            'country',
+            'postal_code' 
     	];
 }
