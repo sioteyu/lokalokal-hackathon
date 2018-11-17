@@ -54,6 +54,11 @@ class TransactionHistoryController extends ApiController
 
         $transaction = TransactionHistory::create($TransactionHistory);
 
-        return $this->respondCreated('Successfully created an Transaction with ID = ' . $transaction->id);
+        // return $this->respondCreated('Successfully created an Transaction with ID = ' . $transaction->id);
+
+        return $this->respond([
+            'message' => 'Successfully created a transaction.',
+            'id' => $transaction->id
+        ]);
     }
 }
