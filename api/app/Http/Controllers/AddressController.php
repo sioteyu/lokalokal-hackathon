@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Address;
 use Illuminate\Support\Facades\Input;
 
 class AddressController extends ApiController
