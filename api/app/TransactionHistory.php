@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class TransactionHistory extends Model
 {
     protected $table = 'transaction_history';
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $fillable = [
     		'user_id',
