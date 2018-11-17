@@ -96,6 +96,21 @@ $router->group(['middleware' => 'cors'], function () use ($router) {
 
 	$router->DELETE('trans/{id}', ['uses' => 'TransactionController@destroy']);
 
+
+	$router->GET('coffee', ['uses' => 'CoffeePartnerController@index']);
+
+	$router->POST('coffee', ['uses' => 'CoffeePartnerController@store']);
+
+	$router->GET('coffee/{id}', ['uses' => 'CoffeePartnerController@show']);
+
+	$router->PUT('coffee/{id}', ['uses' => 'CoffeePartnerController@update']);
+
+	$router->PATCH('coffee/{id}', ['uses' => 'CoffeePartnerController@update']);
+
+	$router->DELETE('coffee/{id}', ['uses' => 'CoffeePartnerController@destroy']);
+
+	$router->GET('coffee/{id}/transactions', ['uses' => 'CoffeePartnerController@showTransactions']);
+
 });
 
 
