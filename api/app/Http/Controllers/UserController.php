@@ -38,7 +38,9 @@ class UserController extends ApiController
             "password" => $hashed,
             "first_name" => Input::get('first_name'),
             "last_name" => Input::get('last_name'),
-            "type" => Input::get('type')
+            "type" => Input::get('type'),
+            "credits" => Input::get('credits'),
+            "points" => Input::get('points')
         );
 
         User::find($user_id)->update($user);
