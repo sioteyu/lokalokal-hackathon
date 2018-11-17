@@ -49,8 +49,7 @@ class TransactionHistoryController extends ApiController
         $TransactionHistory  =  array(
             "user_id" => Input::get('user_id'), 
             "address_id" => Input::get('address_id'),
-            "credits" => Input::get('credits'),
-            "date" => $current_time
+            "credits" => Input::get('credits')
         );
 
         TransactionHistory::create($TransactionHistory);
