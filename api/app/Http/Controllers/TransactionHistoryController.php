@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\User;
 use App\TransactionHistory;
 use Illuminate\Support\Facades\Input;
 
@@ -26,7 +27,7 @@ class TransactionHistoryController extends ApiController
 
     public function show($user_id)
     {
-        return TransactionHistory::find($user_id);
+        return TransactionHistory::where('user_id', $user_id)->get();
     }
 
     public function destroy($id)
