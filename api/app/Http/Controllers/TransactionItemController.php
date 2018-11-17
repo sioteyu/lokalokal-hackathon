@@ -23,9 +23,9 @@ class TransactionItemController extends ApiController
         return $this->createTransactionItem();
     }
 
-    public function show($user_id)
+    public function show($id)
     {
-        return TransactionItem::find($user_id);
+        return TransactionItem::where('transaction_history_id', $id)->get();
     }
 
     public function destroy($id)
