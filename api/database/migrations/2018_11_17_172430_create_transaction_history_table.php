@@ -17,6 +17,7 @@ class CreateTransactionHistoryTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('address_id')->unsigned();
+            $table->boolean('is_purchase');
             $table->decimal('credits');
             $table->timestamps();
 
