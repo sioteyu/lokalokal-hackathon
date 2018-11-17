@@ -38,7 +38,7 @@ class UserController extends ApiController
             "password" => $hashed,
             "first_name" => Input::get('first_name'),
             "last_name" => Input::get('last_name'),
-            "user_type" => Input::get('user_type')
+            "type" => Input::get('type')
         );
 
         User::find($user_id)->update($user);
@@ -68,7 +68,7 @@ class UserController extends ApiController
             "password" => $hashed,
             "first_name" => Input::get('first_name'),
             "last_name" => Input::get('last_name'),
-            "user_type" => Input::get('user_type')
+            "type" => Input::get('type')
         );
 
         if(User::where('username', '=', Input::get('username'))->exists()) {
